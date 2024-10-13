@@ -1,6 +1,6 @@
 
-const Button = ({ text, clickMethod }) => {
-    return <button onClick={clickMethod}>{text}</button>
+const Button = ({ text, clickMethod, btnColor }) => {
+    return <button style={{backgroundColor: btnColor}} onClick={clickMethod}>{text}</button>
 }
 
 export default Button

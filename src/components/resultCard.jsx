@@ -6,7 +6,9 @@ const ResultCard = ({ result, errorMsg }) => {
            <hr />
             <div className="card mt">
               {
-                errorMsg ? <p>Error: <span>{errorMsg}</span></p> : <p>Result: {result}</p>
+                errorMsg ? 
+                <p className="error">Error: <span>{errorMsg}</span></p> :
+                <p className="success">Result: {result}</p>
               }
             </div>
         </>

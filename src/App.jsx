@@ -15,7 +15,10 @@ function App() {
   const [showResult, setShowResult] = useState(false)
   const [command, setCommand] = useState('')
 
-
+  const reset = () => {
+    setShowResult(false)
+    setCommand('')
+  }
   const runMachine = async () => {
     setIsLoading(true)
     try {
@@ -59,16 +62,18 @@ function App() {
   return (
     <>
       <h1>Stack Machine</h1>
+      <p className='mb'>This machine can process valid operations and returns the number at the top of the stack.</p>
       <div className="card mb">
         <Input value={command} onChange={updateInput} />
-        <Button clickMethod={runMachine} text='Execute' />
+
+        <div style={{display: 'flex', justifyContent: 'center', gap: '8px', marginTop: '8px'}}>
+          <Button clickMethod={runMachine} text='Execute' />
+          <Button clickMethod={reset} text='Reset' btnColor={"gray"} />
+        </div>
       </div>
 
       {isLoading && <Spinner />}
-      
-      {
-        showResult && <ResultCard result={result} errorMsg={errorMsg}/>
-      }
+      {showResult && <ResultCard result={result} errorMsg={errorMsg}/>}
       <InstructionCard />
     </>
   )

@@ -5,7 +5,7 @@ const Input = ({ value, onChange }) => {
           value={value}
           onChange={onChange}
           type="text"
-          placeholder='Enter command here'
+          placeholder='Enter command here e.g 1 2 +'
         />
     )
 }
