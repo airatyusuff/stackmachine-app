@@ -37,8 +37,10 @@ function App() {
 
       handleResult(result)
     }
-    catch (error) {
-      console.log('error', error)
+    catch (err) {
+      setShowResult(true)
+      setErrorMsg(`${err}`)
+      setIsLoading(false)
     }
   }
 
